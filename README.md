@@ -28,3 +28,5 @@ Entry Test
 5. Demo hosted on raspberry pi
 
 To change endpoint link go to `src/model/model.js`
+
+Pāvels Jacuks Entry Test
