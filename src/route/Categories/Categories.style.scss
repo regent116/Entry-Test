@@ -1,0 +1,45 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.product-container {
+  margin: 100px;
+  @include bp-resolution;
+  h1{
+    text-transform: capitalize;
+  }
+}
+
+.product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 90px;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+.product-spinner-placement{
+  transform: translateY(-80px); 
+}
+
+
+@supports (display: grid) {
+  .product-wrapper {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-gap: 6rem;
+  }
+
+  .product-wrapper,
+  .product-item-wrapper {
+  }
+}
+
+
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .product-wrapper {
+    grid-gap: 1rem;
+  }
+}

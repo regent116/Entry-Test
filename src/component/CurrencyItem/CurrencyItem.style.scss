@@ -1,0 +1,16 @@
+@import '../../scss/variables';
+
+.currency-item {
+    color: $secondary-color;
+    font-family: Raleway;
+    display: block;
+    color: $secondary-color;
+    cursor: pointer;
+    user-select: none;
+    font-size: 18px;
+    font-variation-settings: 'wght' 500;
+    transition: all .3s ease 0s;
+    &:hover{
+      color: coral;
+    }
+  }

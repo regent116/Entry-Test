@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,wBAAwB,CAAA;EACpB,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,IAAI;EACX,uBAAuB,EAAE,UAAU;EACnC,WAAW,EAAE,SAAS;EACtB,SAAS,EAAE,IAAI;EACf,KAAK,ECRO,OAAO;EDSnB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,GAAG;CACrB;;AAED,AAAA,0BAA0B,CAAA;EACtB,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,KAAK;EACZ,GAAG,EAAE,IAAI;CACZ",
+    "sources": [
+        "CurrencyIcon.style.scss",
+        "../../scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "CurrencyIcon.style.css"
+}

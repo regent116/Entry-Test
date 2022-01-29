@@ -1,0 +1,21 @@
+.dark-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0%;
+  top: 90px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  -webkit-transition: opacity 450ms;
+  transition: opacity 450ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+          transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dark-overlay.visible {
+  opacity: 1;
+  pointer-events: visible;
+}
+/*# sourceMappingURL=CartDarkOverlay.style.css.map */

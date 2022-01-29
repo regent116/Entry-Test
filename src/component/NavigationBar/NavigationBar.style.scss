@@ -1,0 +1,63 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.navbar-container {
+  width: 100%;
+  height: $navbar-height;
+}
+.navbar-wrapper {
+  @include bp-resolution;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.nav-items-wrapper{
+  display: flex;
+  flex: 1;
+  height: 100%;
+  a {
+    text-decoration: none;
+  }
+}
+
+.actions {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: right;
+}
+.action-items{
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+
+.logo {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media all and (min-width: 1921px) and (max-width: 2560px) {
+  .navbar-wrapper {
+    margin: 0 $monitor2560 0 $monitor2560;
+  }
+
+}
+
+@media all and (min-width: 1681px) and (max-width: 1920px) {
+  .navbar-wrapper {
+    margin: 0 $monitor1920 0 $monitor1920;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1680) {
+  .navbar-wrapper {
+    margin: 0 $monitor1680 0 $monitor1680;
+  }
+}

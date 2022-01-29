@@ -1,0 +1,95 @@
+.cart-wrapper {
+  margin: 80px;
+  display: none;
+  min-width: 293px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 25px;
+  height: 0px;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 450ms;
+  transition: opacity 450ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+          transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+}
+
+.cart-wrapper.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: fade_in_show 0.5s;
+          animation: fade_in_show 0.5s;
+  height: auto;
+  opacity: 1;
+  margin: 8px 16px 20px 16px;
+}
+
+.cart-title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.cart-title {
+  font-family: Raleway;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-variation-settings: 'wght' 700;
+}
+
+.cart-title.lowercase {
+  font-variation-settings: 'wght' 300;
+}
+
+.cart-price-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-price-wrapper__total {
+  font-family: "Roboto";
+}
+
+.cart-price-wrapper__price {
+  font-family: Raleway;
+  font-variation-settings: 'wght' 700;
+}
+
+.cart-action-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-action-wrapper a {
+  text-decoration: none;
+}
+
+.cart-capacity a {
+  text-decoration: none;
+}
+
+.cart-empty-container {
+  font-family: Raleway;
+}
+/*# sourceMappingURL=Cart.style.css.map */

@@ -1,0 +1,35 @@
+.modal-container {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  right: 0px;
+  top: 90px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.modal-overlay {
+  min-width: 325px;
+  background-color: #ffffff;
+  height: 0;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 0, 0.11, 1);
+          transition-timing-function: cubic-bezier(0.1, 0, 0.11, 1);
+  overflow: hidden;
+}
+
+.modal-overlay.visible {
+  height: 100%;
+}
+
+.modal-overlay.alt {
+  min-width: 100px !important;
+}
+
+@media all and (max-width: 515px) {
+  .modal-overlay {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Modal.style.css.map */

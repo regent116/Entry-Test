@@ -1,0 +1,35 @@
+.nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  color: #1d1f22;
+  font-family: Raleway;
+  padding: 0 16px 4px 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+.nav-item a {
+  color: #1d1f22;
+  text-decoration: none;
+}
+
+.active {
+  color: green;
+  border-bottom: 2px solid #5ece7b;
+}
+
+.active a {
+  color: green;
+  text-decoration: none;
+}
+/*# sourceMappingURL=NavItem.style.css.map */

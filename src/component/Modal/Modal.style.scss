@@ -1,0 +1,29 @@
+@import '../../scss/variables';
+.modal-container{
+    position: absolute;
+    display: grid;
+    right: 0px;
+    top: $navbar-height;
+    overflow: hidden;
+    z-index: 2;
+}
+.modal-overlay{
+    min-width: 325px;
+    background-color: $background-primary-color;
+    height: 0;
+    transition: all 500ms;
+    transition-timing-function: cubic-bezier(0.1, 0, 0.11, 1);
+    overflow: hidden;
+    &.visible{
+        height: 100%;
+    }
+    &.alt{
+        min-width: 100px !important;
+    }
+}
+
+@media all and (max-width: 515px) {
+    .modal-overlay{
+      width: 100%;
+    }
+}

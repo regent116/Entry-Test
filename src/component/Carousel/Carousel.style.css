@@ -1,0 +1,70 @@
+.gallery-image-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 500px;
+  margin-right: 50px;
+  overflow: hidden;
+}
+
+.slider {
+  height: 100%;
+  display: -webkit-box;
+}
+
+.blank {
+  width: 100px;
+}
+
+.arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.arrow img {
+  max-width: 40%;
+  max-height: 40%;
+  overflow: hidden;
+}
+
+.arrow:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.arrow.right {
+  right: 0px;
+}
+
+.arrow.left {
+  left: 0px;
+}
+
+.arrow.show {
+  opacity: 0.3;
+}
+/*# sourceMappingURL=Carousel.style.css.map */

@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato-Light'), url(../fonts/Lato-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Icons2';
+  src: local('Type-Icons'), url(../fonts/Type-Icons.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway-V'), url(../fonts/Raleway-V.ttf) format('woff2');
+}
+
+@font-face {
+  font-family: 'Icons';
+  src: local('Font-90-Icons'), url(../fonts/Icons.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('RobotoCondensed'), url(../fonts/RobotoCondensed-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Entypo';
+  src: local('Entypo'), url(../fonts/Entypo.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: local('RobotoCondensed'), url(../fonts/RobotoCondensed-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: local('SourceSansPro'), url(../fonts/SourceSansPro-Regular.ttf) format('truetype');
+}
+
+@import '../../scss/variables';
+
+body{
+  margin: 0px;
+}
+
+p{
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #6A707B;
+
+}
+
+h1{
+  font-family: Raleway;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: normal;
+}
+h2{
+  font-size: 20px;
+  font-family: Lato;
+  line-height: normal;
+}
+
+.Base{
+  width: 680px;
+  height: 100vh;
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+}
+.background{
+  background-image: url("https://i.imgur.com/vK47tG2.jpg");
+  background: url("https://i.imgur.com/vK47tG2.jpg"), linear-gradient(#e66465, #9198e5);
+ min-height: 100%;
+
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-container{
+  height:fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.base-container{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: 100vh;
+  max-height: 90vw;
+  width: 55vw;
+  max-width: 55vh;
+  transform: translate(-50%, 0%);
+}
+
+
+@media only screen and (max-width: 845px) {
+  .base-container{
+    width: 90vw;
+    max-width: 90vh;
+    left: auto;
+    transform: translate(0%, 0%);
+  }
+}

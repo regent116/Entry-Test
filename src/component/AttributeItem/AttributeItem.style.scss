@@ -1,0 +1,58 @@
+@import '../../scss/variables';
+
+.attribute-item {
+  display: flex;
+  justify-content: center;
+  position:relative;
+  align-items: center;
+  font-family: SourceSansPro;
+  width: 63px;
+  height: 45px;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+
+  &.fill {
+    background: $primary-color !important;
+    color: white;
+  }
+
+  &__circle{
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  border-radius: 50%;
+  background: $primary-color;
+  position: absolute;
+  transition-property: transform,opacity;
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.06, 1);
+  bottom: -2px;
+  z-index: -1;
+  left: calc(50%-10px);
+   &.fill{
+    transform: scale(15);
+    opacity: 1;
+   }
+  }
+
+  &.empty {
+    border-color: gray;
+    color: gray;
+  }
+
+  &.mini {
+    width: fit-content;
+    min-width: 24px;
+    height: 24px;
+    font-size: 14px;
+    padding: 0px 4px 0px 4px
+  }
+
+
+}
+
+

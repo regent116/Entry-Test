@@ -1,0 +1,30 @@
+@import '../../scss/variables';
+
+.cart-icon {
+    position: relative;
+  font-family: Roboto;
+  user-select: none;
+
+  &__item-count {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    right: -9px;
+    top: -8px;
+    opacity: 0;
+    transform: scale(0);
+    background: $primary-color;
+    transition-property: opacity, transform;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.1, 0, 0.11, 1);
+    &.visible{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

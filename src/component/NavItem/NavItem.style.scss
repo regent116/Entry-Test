@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: $primary-color;
+  font-family: Raleway;
+  padding: 0 16px 4px 16px;
+  text-transform: uppercase;
+  cursor: pointer; 
+  user-select: none;
+  text-decoration: none; 
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+.active {
+  color: green;
+  border-bottom: 2px solid #5ece7b;
+  a {
+    color: green;
+    text-decoration: none;
+  }
+}

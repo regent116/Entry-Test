@@ -1,0 +1,58 @@
+.currency-list-wrapper {
+  margin: 0px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 25px;
+  font-family: Raleway;
+  height: 0px;
+  opacity: 0;
+  -webkit-transition: opacity 450ms;
+  transition: opacity 450ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+          transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+}
+
+.currency-list-wrapper.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: fade_in_show 0.5s;
+          animation: fade_in_show 0.5s;
+  height: auto;
+  opacity: 1;
+  margin: 8px 0px 20px 22px;
+}
+
+@-webkit-keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.currency-list-item {
+  height: 24px;
+}
+/*# sourceMappingURL=CurrencyList.style.css.map */

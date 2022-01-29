@@ -1,0 +1,28 @@
+.spinner {
+  opacity: 0;
+  top: -94px;
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem;
+  border-radius: 50%;
+  border: 0.3rem solid rgba(200, 200, 200, 0.3);
+  border-top-color: black;
+  animation: 1.5s spin infinite linear;
+  transition: opacity 0.3s;
+  user-select: none;
+  &.active {
+    opacity: 1;
+    scale: 1;
+  }
+  &.inactive{
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

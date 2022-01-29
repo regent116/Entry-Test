@@ -1,0 +1,23 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.cart-page-container {
+    margin: 100px;
+    @include bp-resolution;
+    h1{
+      text-transform: uppercase;
+      font-variation-settings: 'wght' 700;
+      color: $primary-color;
+    }
+  }
+  
+  .cart-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    margin-top: 90px;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+  }

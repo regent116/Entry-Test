@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+.dark-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0%;
+    top: $navbar-height;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    z-index: 1;
+    transition: opacity 450ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+    pointer-events: none; 
+    overflow: hidden;
+    &.visible{
+        opacity: 1;
+        pointer-events: visible;
+    }
+}

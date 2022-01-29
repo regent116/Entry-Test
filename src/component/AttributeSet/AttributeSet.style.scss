@@ -1,0 +1,20 @@
+@import '../../scss/variables';
+
+.attribute-wrapper {
+    margin-bottom: 40px;
+    color: $primary-color;
+  
+    &__title {
+      font-family: Roboto;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-variation-settings: 'wght' 700;
+    }
+  
+    &__blocks-wrapper {
+      display: flex;
+      margin-top: 9px;
+      width: 100%;
+      column-gap: 20px;
+    }
+  }

@@ -1,0 +1,76 @@
+
+> scandiweb-practical-task@1.0.0 start /var/www/pieradijumumuzejs.lv/a_old/scandiweb-practical-task
+> webpack serve --config ./webpack.config.js --mode development
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://0.0.0.0:8080/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from /
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /var/www/pieradijumumuzejs.lv/a_old/scandiweb-practical-task/dist
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /index.html
+[34mℹ[39m [90m｢wdm｣[39m: assets by path *.ttf 1020 KiB 7 assets
+assets by path *.svg 5.54 KiB
+  asset 03b3965f46dde310453f0195a1ae8895.svg 1.91 KiB [emitted] [immutable] [from: src/images/logo.svg] (auxiliary name: main)
+  asset d19953670255792370f9fd25fc20f2ce.svg 1.72 KiB [emitted] [immutable] [from: src/images/cart.svg] (auxiliary name: main)
+  asset e4a558c465712930faf9b7f5642db17e.svg 1.72 KiB [emitted] [immutable] [from: src/images/cartAlt.svg] (auxiliary name: main)
+  asset 766d7b11f183f77a1e40c47ea18dd7ee.svg 192 bytes [emitted] [immutable] [from: src/images/vector-down.svg] (auxiliary name: main)
+assets by path *.png 48.7 KiB
+  asset 1e08f7eb0e5b0de83ac421f4202ef5b9.png 24.6 KiB [emitted] [immutable] [from: src/images/arrow-right.png] (auxiliary name: main)
+  asset 54c1288410c6d51eda6394350ccac488.png 24.1 KiB [emitted] [immutable] [from: src/images/arrow-left.png] (auxiliary name: main)
+asset bundle.js 3.3 MiB [emitted] (name: main)
+asset 5a9d7dd4f7161614687db696e41b4663.otf 14.3 KiB [emitted] [immutable] [from: src/component/fonts/Entypo.otf] (auxiliary name: main)
+orphan modules 441 KiB [orphan] 138 modules
+runtime modules 27.5 KiB 14 modules
+cacheable modules 2.7 MiB
+  modules by path ./node_modules/ 2.29 MiB 181 modules
+  modules by path ./src/ 414 KiB
+    modules by path ./src/component/ 311 KiB 107 modules
+    modules by path ./src/route/ 65.7 KiB 15 modules
+    modules by path ./src/features/ 13 KiB 9 modules
+    modules by path ./src/images/ 480 bytes
+      modules by path ./src/images/*.svg 320 bytes 4 modules
+      modules by path ./src/images/*.png 160 bytes 2 modules
+    ./src/index.js 3.1 KiB [built] [code generated]
+    ./src/model/model.js 4.63 KiB [built] [code generated]
+    ./src/util/currency/currencyList.json 16.2 KiB [built] [code generated]
+./node_modules/webpack/hot/ sync nonrecursive ^\.\/log$ 170 bytes [built] [code generated]
+webpack 5.65.0 compiled successfully in 27730 ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: assets by status 1.07 MiB [cached] 14 assets
+assets by status 3.32 MiB [emitted]
+  asset bundle.js 3.3 MiB [emitted] (name: main)
+  asset main.8052f16497f5d60aea53.hot-update.js 12.7 KiB [emitted] [immutable] [hmr] (name: main)
+  asset main.8052f16497f5d60aea53.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 3.32 MiB (1.07 MiB) = bundle.js 3.3 MiB main.8052f16497f5d60aea53.hot-update.js 12.7 KiB 14 auxiliary assets
+cached modules 3.12 MiB [cached] 481 modules
+runtime modules 27.5 KiB 14 modules
+./src/route/Product/Product.container.js 8.99 KiB [built] [code generated]
+webpack 5.65.0 compiled successfully in 1970 ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: assets by status 4.37 MiB [cached] 15 assets
+cached modules 3.12 MiB (javascript) 27.5 KiB (runtime) [cached] 495 modules
+./src/route/Product/Product.container.js 8.99 KiB [built]
+webpack 5.65.0 compiled successfully in 1158 ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: asset bundle.js 411 KiB [emitted] (name: main)
+asset main.567645cf5ec11419a068.hot-update.json 17.1 KiB [emitted] [immutable] [hmr]
+asset main.567645cf5ec11419a068.hot-update.js 1.18 KiB [emitted] [immutable] [hmr] (name: main)
+Entrypoint main 412 KiB = bundle.js 411 KiB main.567645cf5ec11419a068.hot-update.js 1.18 KiB
+cached modules 341 KiB [cached] 32 modules
+runtime modules 26.3 KiB 10 modules
+./src/index.js 139 bytes [built] [code generated]
+webpack 5.65.0 compiled successfully in 370 ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.
+[34mℹ[39m [90m｢wdm｣[39m: Compiling...
+[34mℹ[39m [90m｢wdm｣[39m: assets by status 1.07 MiB [cached] 14 assets
+assets by status 6.21 MiB [emitted]
+  asset bundle.js 3.3 MiB [emitted] (name: main)
+  asset main.1bd26a7be7db9f9c2fc8.hot-update.js 2.9 MiB [emitted] [immutable] [hmr] (name: main)
+  asset main.1bd26a7be7db9f9c2fc8.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 6.21 MiB = bundle.js 3.3 MiB main.1bd26a7be7db9f9c2fc8.hot-update.js 2.9 MiB 14 auxiliary assets
+cached modules 3.12 MiB [cached] 481 modules
+runtime modules 27.5 KiB 14 modules
+./src/index.js 3.13 KiB [built] [code generated]
+webpack 5.65.0 compiled successfully in 1341 ms
+[34mℹ[39m [90m｢wdm｣[39m: Compiled successfully.

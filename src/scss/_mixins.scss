@@ -1,0 +1,37 @@
+@import './variables';
+
+@mixin bp-resolution {
+  @media (min-width: 1921px) {
+    @content;
+    margin-left: $monitor2560;
+    margin-right: $monitor2560;
+  }
+
+  @media (min-width: 1681px) and (max-width: 1920px) {
+    @content;
+    margin-left: $monitor1920;
+    margin-right: $monitor1920;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1680px) {
+    @content;
+    margin-left: $monitor1680;
+    margin-right: $monitor1680;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1680px) {
+    @content;
+    margin-left: $monitor1680;
+    margin-right: $monitor1680;
+  }
+
+  @media (max-width: 1279px) {
+    @content;
+    margin-left: $monitor1280;
+    margin-right: $monitor1280;
+  }
+}
+
+@mixin mobile{
+  width: 50vw;
+}

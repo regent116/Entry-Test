@@ -1,0 +1,81 @@
+.product-container {
+  margin: 100px;
+}
+
+@media (min-width: 1921px) {
+  .product-container {
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+}
+
+@media (min-width: 1681px) and (max-width: 1920px) {
+  .product-container {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .product-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .product-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .product-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.product-container h1 {
+  text-transform: capitalize;
+}
+
+.product-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 90px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 40vh;
+}
+
+.product-spinner-placement {
+  -webkit-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+@supports (display: grid) {
+  .product-wrapper {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -ms-grid-columns: (minmax(22rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-gap: 6rem;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .product-wrapper {
+    grid-gap: 1rem;
+  }
+}
+/*# sourceMappingURL=Categories.style.css.map */

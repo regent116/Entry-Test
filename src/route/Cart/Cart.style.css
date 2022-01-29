@@ -1,0 +1,66 @@
+.cart-page-container {
+  margin: 100px;
+}
+
+@media (min-width: 1921px) {
+  .cart-page-container {
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+}
+
+@media (min-width: 1681px) and (max-width: 1920px) {
+  .cart-page-container {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .cart-page-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1680px) {
+  .cart-page-container {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .cart-page-container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.cart-page-container h1 {
+  text-transform: uppercase;
+  font-variation-settings: 'wght' 700;
+  color: #1d1f22;
+}
+
+.cart-page-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 30px;
+  margin-top: 90px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 40vh;
+}
+/*# sourceMappingURL=Cart.style.css.map */

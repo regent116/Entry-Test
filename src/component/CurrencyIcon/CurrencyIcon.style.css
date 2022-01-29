@@ -1,0 +1,21 @@
+.currency-item-container {
+  position: relative;
+  width: 17px;
+  font-variation-settings: 'wght' 400;
+  font-family: 'Raleway';
+  font-size: 22px;
+  color: #1d1f22;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-right: 30px;
+  margin-bottom: 4px;
+}
+
+.currency-icon-svg-wrapper {
+  position: absolute;
+  right: -15px;
+  top: -3px;
+}
+/*# sourceMappingURL=CurrencyIcon.style.css.map */

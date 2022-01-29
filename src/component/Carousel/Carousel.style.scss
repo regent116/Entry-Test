@@ -1,0 +1,54 @@
+.gallery-image-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  margin-right: 50px;
+  overflow: hidden;
+
+}
+
+.slider {
+  height: 100%;
+  display:-webkit-box;
+}
+
+.blank {
+  width: 100px;
+}
+
+.arrow {
+  display: flex;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+  align-items: center;
+  user-select: none;
+
+  img {
+    max-width: 40%;
+    max-height: 40%;
+    overflow: hidden;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &.right {
+    right: 0px;
+  }
+
+  &.left {
+    left: 0px;
+  }
+
+  &.show{
+    opacity: 0.3;
+  }
+}

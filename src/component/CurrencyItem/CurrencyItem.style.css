@@ -1,0 +1,20 @@
+.currency-item {
+  color: #555555;
+  font-family: Raleway;
+  display: block;
+  color: #555555;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 18px;
+  font-variation-settings: 'wght' 500;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+.currency-item:hover {
+  color: coral;
+}
+/*# sourceMappingURL=CurrencyItem.style.css.map */

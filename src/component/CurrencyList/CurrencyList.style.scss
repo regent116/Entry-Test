@@ -1,0 +1,35 @@
+.currency-list-wrapper {
+  margin: 0px;
+  display: none;
+  flex-direction: column;
+  row-gap: 25px;
+  font-family: Raleway;
+  height: 0px;
+  opacity: 0;
+  transition: opacity 450ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.21, 1);
+
+  &.visible {
+    display: flex;
+    animation: fade_in_show 0.5s;
+    height: auto;
+    opacity: 1;
+    margin: 8px 0px 20px 22px;
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.currency-list-item {
+  height: 24px;
+}
