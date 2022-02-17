@@ -28,6 +28,15 @@
   color: white;
 }
 
+.attribute-item.fill-outline {
+  border: 1px solid #e4e4e4;
+  color: white;
+}
+
+.attribute-item.fill-outline.alt {
+  color: #1d1f22;
+}
+
 .attribute-item__circle {
   width: 20px;
   height: 20px;
@@ -35,10 +44,10 @@
   border-radius: 50%;
   background: #1d1f22;
   position: absolute;
-  -webkit-transition-property: opacity,-webkit-transform;
-  transition-property: opacity,-webkit-transform;
-  transition-property: transform,opacity;
-  transition-property: transform,opacity,-webkit-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-transition-duration: 450ms;
           transition-duration: 450ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0, 0.06, 1);

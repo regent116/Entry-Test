@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import Cart from '../../images/cartAlt.svg';
+import TrashIcon from '../../images/trash-icon.svg';
 import './Button.style.css';
 
 export default class Button extends PureComponent {
@@ -22,6 +23,8 @@ export default class Button extends PureComponent {
 				return this.renderMiniAltBtn();
 			case 'text':
 				return this.renderTextBtn();
+			case 'trash-icon':
+				return this.renderTrashIcon();
 			default:
 				return null;
 		}
@@ -121,6 +124,16 @@ export default class Button extends PureComponent {
 		return (
 			<div className="text-btn" onClick={() => handleClick()}>
 				{value}
+			</div>
+		);
+	};
+
+	renderTrashIcon = () => {
+		const { handleClick } = this.props;
+
+		return (
+			<div className="trash-icon" onClick={() => handleClick()}>
+				<img src={TrashIcon} />
 			</div>
 		);
 	};

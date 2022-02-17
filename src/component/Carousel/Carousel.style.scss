@@ -8,11 +8,15 @@
   margin-right: 50px;
   overflow: hidden;
 
+  &.alt {
+    width: 141px;
+    height: 185px;
+  }
 }
 
 .slider {
   height: 100%;
-  display:-webkit-box;
+  display: -webkit-box;
 }
 
 .blank {
@@ -48,7 +52,7 @@
     left: 0px;
   }
 
-  &.show{
+  &.show {
     opacity: 0.3;
   }
 }

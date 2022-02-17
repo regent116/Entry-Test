@@ -14,18 +14,18 @@ export class CartItemContainer extends PureComponent {
 	}
 
 	containerProps() {
-		const { product, increment, decrement, id, type, resetCart } = this.props;
+		const { product, increment, decrement, id, type, resetCart, removeCartItem } = this.props;
 
-		return { product, increment, decrement, id, type, resetCart };
+		return { product, increment, decrement, id, type, resetCart, removeCartItem };
 	}
 
 	// eslint-disable-next-line consistent-return
-	startAnimation() {
+	startResetCartAnimation() {
 		const { resetCart } = this.props;
 
 		if (this.itemRef === null) return resetCart();
 
-		this.itemRef.startAnimation();
+		this.itemRef.startResetCartAnimation();
 	}
 
 	render() {
@@ -44,6 +44,7 @@ CartItemContainer.propTypes = {
 	decrement: PropTypes.func,
 	id: PropTypes.number,
 	increment: PropTypes.func,
+	removeCartItem: PropTypes.func,
 	product: PropTypes.shape({
 		attributes: PropTypes.arrayOf(
 			PropTypes.shape({
@@ -53,7 +54,7 @@ CartItemContainer.propTypes = {
 		),
 		brand: PropTypes.string,
 		count: PropTypes.number,
-		image: PropTypes.string,
+		image: PropTypes.arrayOf(PropTypes.string),
 		prices: PropTypes.arrayOf(
 			PropTypes.shape({
 				amount: PropTypes.number,

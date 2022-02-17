@@ -1,7 +1,7 @@
 .cart-wrapper {
   margin: 80px;
   display: none;
-  min-width: 293px;
+  min-width: 337px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -37,6 +37,20 @@
           flex-direction: row;
   -webkit-column-gap: 5px;
           column-gap: 5px;
+}
+
+.cart-items-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  row-gap: 35px;
 }
 
 .cart-title {

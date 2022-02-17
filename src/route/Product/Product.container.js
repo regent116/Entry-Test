@@ -39,11 +39,23 @@ export class ProductContainer extends PureComponent {
 			isLoading: false
 		};
 
+	
 		this.productRef = React.createRef();
 	}
 
 	handleGalleryClick(i) {
 		this.productRef.carouselRef.goToSlide(i);
+	}
+
+	componentDidMount() {
+		const { currentProduct } = this.props;
+
+		fetchProduct(currentProduct).then((res) => {
+			this.setState({
+				productData: res.data.product,
+				isLoading: res.loading
+			});
+		});
 	}
 
 	handleAddToCartClick() {
@@ -55,7 +67,7 @@ export class ProductContainer extends PureComponent {
 			brand: productData.brand,
 			name: productData.name,
 			prices: productData.prices,
-			image: productData.gallery[0],
+			image: productData.gallery,
 			attributes: [],
 			count: 1
 		};
@@ -71,13 +83,6 @@ export class ProductContainer extends PureComponent {
 	containerProps() {
 		const { currentProduct, setCurrentImage } = this.props;
 		const { productData, isLoading } = this.state;
-
-		fetchProduct(currentProduct).then((res) => {
-			this.setState({
-				productData: res.data.product,
-				isLoading: res.loading
-			});
-		});
 
 		return { productData, isLoading, currentProduct, setCurrentImage };
 	}

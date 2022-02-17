@@ -1,7 +1,7 @@
 .cart-wrapper {
   margin: 80px;
   display: none;
-  min-width: 293px;
+  min-width: 337px;
   flex-direction: column;
   row-gap: 25px;
   height: 0px;
@@ -23,6 +23,15 @@
   display: flex;
   flex-direction: row;
   column-gap: 5px;
+}
+
+.cart-items-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  row-gap: 35px;
 }
 
 .cart-title {

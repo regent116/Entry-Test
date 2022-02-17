@@ -130,6 +130,36 @@
   }
 }
 
+.trash-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  min-width: 24px;
+  height: 24px;
+  color: $primary-color;
+  cursor: pointer;
+  user-select: none;
+  filter: invert(40%)  brightness(96%);
+
+  &.inactive {
+    background-color: $inActive-btn-color;
+  }
+
+  &:hover {
+    filter: invert(21%) sepia(100%) saturate(3618%) hue-rotate(102deg) brightness(96%) contrast(108%);
+  }
+
+  &.alt {
+    width: 45px;
+    height: 45px;
+  }
+
+  img{
+    min-width: 100%;
+  }
+}
+
 .text-btn {
   color: $secondary-color;
   font-family: Raleway;

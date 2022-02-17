@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './AttributeItem.style.css';
 
+const primaryColor = '#1d1f22';
+
 export default class AttributeItem extends PureComponent {
 	constructor(props) {
 		super(props);
@@ -10,10 +12,9 @@ export default class AttributeItem extends PureComponent {
 		};
 	}
 
-	componentDidMount() {}
-
 	checkTextReplacement = () => {
 		const { value } = this.props;
+		const { active } = this.state;
 
 		switch (value) {
 			case 'Small':
@@ -25,7 +26,7 @@ export default class AttributeItem extends PureComponent {
 			case 'Extra Large':
 				return 'XL';
 			default:
-				if (this.isValidColor(value)) return null;
+				if (!active && this.isValidColor(value)) return null;
 				return value;
 		}
 	};
@@ -39,30 +40,45 @@ export default class AttributeItem extends PureComponent {
 
 	checkColorReplacement = () => {
 		const { value } = this.props;
+		const { active } = this.state;
 
-		if (!this.isValidColor(value)) return null;
+		if(!this.isValidColor(value) && active) return primaryColor;
+
+		if (!this.isValidColor(value)) return 'initial';
 
 		return value.toLowerCase();
 	};
 
-	activate = () => {
+	activate() {
 		this.setState(({ active }) => ({ active: !active }));
-	};
+	}
 
-	deactivate = () => {
+	deactivate() {
 		this.setState({ active: false });
-	};
+	}
 
-	isActivated() {
+	isActivated = () => {
 		const { active } = this.state;
 		return active;
-	}
+	};
+
+	getAttributeClassName = () => {
+		const { active } = this.state;
+
+		if (active && this.checkColorReplacement() === "white") return ' fill-outline alt';
+
+		if (active && this.checkColorReplacement() !== null) return ' fill-outline';
+
+		if (active && this.checkColorReplacement() === null) return ' fill';
+
+		return '';
+	};
 
 	renderItem = () => {
 		const { inStock, handleClick, id, type } = this.props;
-		const { active } = this.state;
+
 		const isEmpty = inStock === 'false' ? 'empty' : '';
-		const isActive = active === true ? ' fill' : '';
+		const isActive = this.getAttributeClassName();
 		const style = { backgroundColor: `${this.checkColorReplacement()}` };
 
 		switch (type) {

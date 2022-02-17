@@ -8,13 +8,23 @@ export const mapStateToProps = (state) => ({
 });
 
 export class CartIconContainer extends PureComponent {
-
 	containerProps() {
-		const { products, handleClick } = this.props;
-		const productsLength = products.length;
+		const { handleClick } = this.props;
+		const productsQuantity = this.getProductQuantity();
 
-		return { productsLength, handleClick };
+		return { productsQuantity, handleClick };
 	}
+
+	getProductQuantity = () => {
+		const { products } = this.props;
+		let quantity = 0;
+
+		products.forEach((product) => {
+			quantity += product.count;
+		});
+
+		return quantity;
+	};
 
 	render() {
 		return <CartIcon {...this.containerProps()} />;
@@ -33,7 +43,7 @@ CartIconContainer.propTypes = {
 			),
 			brand: PropTypes.string,
 			count: PropTypes.number,
-			image: PropTypes.string,
+			image: PropTypes.arrayOf(PropTypes.string),
 			prices: PropTypes.arrayOf(
 				PropTypes.shape({
 					amount: PropTypes.number,

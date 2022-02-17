@@ -6,18 +6,12 @@ export default class Slide extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.image = new Image();
-		this.loaded = false;
 	}
 
 	componentDidMount() {
 		const { src } = this.props;
-		
-		this.image.src = src;
-		this.image.addEventListener('load', this.handleImageLoaded);
-	}
 
-	handleImageLoaded() {
-		this.loaded = true;
+		this.image.src = src;
 	}
 
 	render() {

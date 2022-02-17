@@ -166,6 +166,49 @@
   font-size: 19px;
 }
 
+.trash-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 24px;
+  height: 24px;
+  color: #1d1f22;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-filter: invert(40%) brightness(96%);
+          filter: invert(40%) brightness(96%);
+}
+
+.trash-icon.inactive {
+  background-color: #a0a0a0;
+}
+
+.trash-icon:hover {
+  -webkit-filter: invert(21%) sepia(100%) saturate(3618%) hue-rotate(102deg) brightness(96%) contrast(108%);
+          filter: invert(21%) sepia(100%) saturate(3618%) hue-rotate(102deg) brightness(96%) contrast(108%);
+}
+
+.trash-icon.alt {
+  width: 45px;
+  height: 45px;
+}
+
+.trash-icon img {
+  min-width: 100%;
+}
+
 .text-btn {
   color: #555555;
   font-family: Raleway;

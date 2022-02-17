@@ -15,7 +15,8 @@ export const mapDispatchToProps = (dispatch) => {
 	return {
 		resetCart: bindActionCreators(() => CartSlice.actions.resetCart(), dispatch),
 		increment: bindActionCreators((id) => CartSlice.actions.increment(id), dispatch),
-		decrement: bindActionCreators((id) => CartSlice.actions.decrement(id), dispatch)
+		decrement: bindActionCreators((id) => CartSlice.actions.decrement(id), dispatch),
+		removeCartItem: bindActionCreators((id) => CartSlice.actions.removeCartItem(id), dispatch)
 	};
 };
 
@@ -36,10 +37,10 @@ export class CartContainer extends PureComponent {
 	};
 
 	containerProps() {
-		const { increment, decrement, products } = this.props;
+		const { increment, decrement, products, removeCartItem } = this.props;
 		const { categoryList } = this.state;
 
-		return { increment, decrement, categoryList, products };
+		return { increment, decrement, categoryList, products, removeCartItem };
 	}
 
 	handleIconCartClick() {
@@ -66,6 +67,7 @@ export class CartContainer extends PureComponent {
 CartContainer.propTypes = {
 	decrement: PropTypes.func,
 	increment: PropTypes.func,
+	removeCartItem: PropTypes.func,
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
 			attributes: PropTypes.arrayOf(
@@ -76,7 +78,7 @@ CartContainer.propTypes = {
 			),
 			brand: PropTypes.string,
 			count: PropTypes.number,
-			image: PropTypes.string,
+			image: PropTypes.arrayOf(PropTypes.string),
 			prices: PropTypes.arrayOf(
 				PropTypes.shape({
 					amount: PropTypes.number,

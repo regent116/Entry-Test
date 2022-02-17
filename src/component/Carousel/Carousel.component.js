@@ -12,7 +12,10 @@ export default class Carousel extends PureComponent {
 		super(props);
 		this.sliderPos = 0;
 		this.container = React.createRef();
-		this.slideRef = React.createRef();
+	}
+
+	componentWillUnmount(){
+		this.slideRef = [];
 	}
 
 	renderArrow = (direction, handleClick) => {
@@ -33,14 +36,13 @@ export default class Carousel extends PureComponent {
 	renderSlider = () => {
 		const { slides, slidePos } = this.props;
 
+		
+
 		return (
 			<div className="slider" style={slidePos}>
 				{slides.map((image, i) => {
 					return (
 						<Slide
-							ref={(e) => {
-								this.slideRef = e;
-							}}
 							src={image}
 							key={i}
 						/>
@@ -51,11 +53,11 @@ export default class Carousel extends PureComponent {
 	};
 
 	render() {
-		const { showArrow, hideArrow, prevSlide, nextSlide } = this.props;
+		const { showArrow, hideArrow, prevSlide, nextSlide, type } = this.props;
 
 		return (
 			<div
-				className="gallery-image-wrapper"
+				className={`gallery-image-wrapper ${type === 'alt' ? 'alt' : ''}`}
 				ref={(e) => {
 					this.container = e;
 				}}
@@ -75,6 +77,7 @@ export default class Carousel extends PureComponent {
 }
 
 Carousel.propTypes = {
+	type: PropTypes.string,
 	hideArrow: PropTypes.func,
 	nextSlide: PropTypes.func,
 	prevSlide: PropTypes.func,
@@ -85,6 +88,7 @@ Carousel.propTypes = {
 };
 
 Carousel.defaultProps = {
+	type: 'default',
 	showArrows: true,
 	slidePos: 0,
 	slides: []

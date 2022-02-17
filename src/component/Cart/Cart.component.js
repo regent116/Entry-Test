@@ -7,8 +7,6 @@ import CartItem from '../CartItem';
 import Price from '../Price';
 import './Cart.style.css';
 
-const capacity = 3;
-
 export default class Cart extends PureComponent {
 	constructor(props) {
 		super(props);
@@ -43,7 +41,7 @@ export default class Cart extends PureComponent {
 
 	startResetCartAnimation = () => {
 		this.cartItemRef.forEach((item) => {
-			item.startAnimation();
+			item.startResetCartAnimation();
 		});
 
 		this.cartItemRef = [];
@@ -67,14 +65,13 @@ export default class Cart extends PureComponent {
 	};
 
 	renderCartProducts = () => {
-		const { products, increment, decrement, resetCart } = this.props;
+		const { products, increment, decrement, resetCart, removeCartItem } = this.props;
 
 		if (products.length === 0) return <div className="cart-empty-container">empty</div>;
 
 		return (
-			<>
+			<div className="cart-items-wrapper">
 				{products.map((product, i) => {
-					if (i < capacity)
 						return (
 							<CartItem
 								key={i}
@@ -85,32 +82,14 @@ export default class Cart extends PureComponent {
 								id={i}
 								increment={increment}
 								decrement={decrement}
+								removeCartItem={removeCartItem}
 								type="mini"
 								resetCart={resetCart}
 							/>
 						);
-
-					return null;
 				})}
-			</>
+			</div>
 		);
-	};
-
-	renderCapacity = () => {
-		const { products, hideOverlays } = this.props;
-		const count = products.length - capacity;
-		const text = `view ${count} more items`;
-
-		if (products.length > capacity)
-			return (
-				<div className="cart-capacity">
-					<Link to="/cart">
-						<Button type="text" value={text} active="true" handleClick={hideOverlays} />
-					</Link>
-				</div>
-			);
-
-		return null;
 	};
 
 	renderTotalPrice = () => {
@@ -153,7 +132,6 @@ export default class Cart extends PureComponent {
 			<div className={`cart-wrapper ${cartOverlayVisible ? 'visible' : ''}`}>
 				{this.renderTitle()}
 				{this.renderCartProducts()}
-				{this.renderCapacity()}
 				{this.renderTotalPrice()}
 				{this.renderAction()}
 			</div>
@@ -166,6 +144,7 @@ Cart.propTypes = {
 	decrement: PropTypes.func,
 	hideOverlays: PropTypes.func,
 	increment: PropTypes.func,
+	removeCartItem: PropTypes.func,
 	resetCart: PropTypes.func,
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -177,7 +156,7 @@ Cart.propTypes = {
 			),
 			brand: PropTypes.string,
 			count: PropTypes.number,
-			image: PropTypes.string,
+			image: PropTypes.arrayOf(PropTypes.string),
 			prices: PropTypes.arrayOf(
 				PropTypes.shape({
 					amount: PropTypes.number,

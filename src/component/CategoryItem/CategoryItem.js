@@ -26,7 +26,7 @@ export default class CategoryItem extends PureComponent {
 	handleQuickBuyClick = () => {
 		const { handleQuickBuyClick, id, brand, name, prices, gallery } = this.props;
 
-		handleQuickBuyClick(id, brand, name, prices, gallery[0]);
+		handleQuickBuyClick(id, brand, name, prices, gallery);
 	};
 
 	handleClick = () => {
@@ -42,9 +42,18 @@ export default class CategoryItem extends PureComponent {
 			<Link to="/product">
 				<div className="product-thumbnail">
 					<Image src={gallery[0]} />
+					{this.renderOutOfStock()}
 				</div>
 			</Link>
 		);
+	};
+
+	renderOutOfStock = () => {
+		const { inStock } = this.props;
+
+		if (inStock === true) return null;
+
+		return <div className="out-of-stock">out of stock</div>;
 	};
 
 	renderName = () => {

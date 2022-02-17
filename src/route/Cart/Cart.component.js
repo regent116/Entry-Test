@@ -6,7 +6,7 @@ import './Cart.style.css';
 
 export class CartIcon extends PureComponent {
 	renderCartItems = () => {
-		const { products, increment, decrement } = this.props;
+		const { products, increment, decrement, removeCartItem } = this.props;
 
 		if (products.length === 0) return <div className="cart-empty-container">empty</div>;
 
@@ -20,6 +20,7 @@ export class CartIcon extends PureComponent {
 							id={i}
 							increment={increment}
 							decrement={decrement}
+							removeCartItem={removeCartItem}
 							type="default"
 						/>
 					);
@@ -44,6 +45,7 @@ export class CartIcon extends PureComponent {
 CartIcon.propTypes = {
 	decrement: PropTypes.func,
 	increment: PropTypes.func,
+	removeCartItem: PropTypes.func,
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
 			attributes: PropTypes.arrayOf(
@@ -54,7 +56,7 @@ CartIcon.propTypes = {
 			),
 			brand: PropTypes.string,
 			count: PropTypes.number,
-			image: PropTypes.string,
+			image: PropTypes.arrayOf(PropTypes.string),
 			prices: PropTypes.arrayOf(
 				PropTypes.shape({
 					amount: PropTypes.number,

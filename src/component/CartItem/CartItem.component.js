@@ -6,6 +6,7 @@ import Image from '../Image';
 import Button from '../Button';
 import AttributeItem from '../AttributeItem';
 import Price from '../Price';
+import Carousel from '../Carousel';
 
 const animationLength = 500;
 
@@ -13,11 +14,14 @@ export default class CartItem extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
-			animate: 0
+			animate: 0,
+			show: 0
 		};
 	}
 
-	startAnimation() {
+	componentDidMount() {}
+
+	startResetCartAnimation() {
 		const { resetCart } = this.props;
 
 		this.setState({ animate: 1 });
@@ -26,6 +30,16 @@ export default class CartItem extends PureComponent {
 			resetCart();
 		}, animationLength);
 	}
+
+	startRemoveCartItemAnimation = () => {
+		const { removeCartItem, id } = this.props;
+
+		this.setState({ animate: 1 });
+
+		return setTimeout(() => {
+			removeCartItem(id);
+		}, animationLength);
+	};
 
 	handleAnimationEnd() {
 		this.setState({ animate: 0 });
@@ -46,9 +60,15 @@ export default class CartItem extends PureComponent {
 
 	renderDefaultLayout = () => {
 		const { product, increment, decrement, id } = this.props;
+		const { animate, show } = this.state;
 
 		return (
-			<div className="cart-item-wrapper alt">
+			<div
+				className="cart-item-wrapper alt"
+				animation={animate}
+				show={show}
+				onAnimationEnd={() => this.handleAnimationEnd()}
+			>
 				<div className="cart-item-name-wrapper alt">
 					<div className="cart-item-name-wrapper__brand">{product.brand}</div>
 					<div>{product.name}</div>
@@ -57,7 +77,15 @@ export default class CartItem extends PureComponent {
 					<Button type="mini-alt" value="+" id={id} handleClickId={increment} />
 				</div>
 				<div className="cart-item-photo alt">
-					<Image src={product.image} />
+					<Carousel slides={product.image} type="alt" />
+					<div className="cart-item-trash-icon-wrapper">
+						<Button
+							type="trash-icon"
+							value="x"
+							id={id}
+							handleClick={this.startRemoveCartItemAnimation}
+						/>
+					</div>
 				</div>
 				<div className="cart-item-price alt">
 					<Price prices={product.prices} />
@@ -66,7 +94,7 @@ export default class CartItem extends PureComponent {
 				<div className="cart-item-attributes">
 					{product.attributes.map((attribute, i) => {
 						return (
-							<AttributeItem key={i} type="default" value={attribute.id} handleClick={() => { }} />
+							<AttributeItem key={i} type="default" value={attribute.id} handleClick={() => {}} />
 						);
 					})}
 				</div>
@@ -79,24 +107,37 @@ export default class CartItem extends PureComponent {
 
 	renderMiniLayout = () => {
 		const { product, increment, decrement, id } = this.props;
-		const { animate } = this.state;
+		const { animate, show } = this.state;
 
 		return (
 			<div
 				className="cart-item-wrapper"
 				animation={animate}
+				show={show}
 				onAnimationEnd={() => this.handleAnimationEnd()}
+				ref={(ref) => {
+					this.cartItemContainer = ref;
+				}}
 			>
 				<div className="cart-item-name-wrapper">
 					<div>{product.brand}</div>
 					<div>{product.name}</div>
 				</div>
-				<div className="cart-item-btn">
+				<div className="cart-item-btn plus">
 					<Button type="mini" value="+" id={id} handleClickId={increment} />
 				</div>
 				<div className="cart-item-photo">
-					<Image src={product.image} />
+					<Image src={product.image[0]} />
+					<div className="cart-item-trash-icon-wrapper">
+						<Button
+							type="trash-icon"
+							value="x"
+							id={id}
+							handleClick={this.startRemoveCartItemAnimation}
+						/>
+					</div>
 				</div>
+
 				<div className="cart-item-price">
 					<Price prices={product.prices} />
 				</div>
@@ -106,7 +147,7 @@ export default class CartItem extends PureComponent {
 						return <AttributeItem key={i} type="mini" value={attribute.id} />;
 					})}
 				</div>
-				<div className="cart-item-btn">
+				<div className="cart-item-btn minus">
 					<Button type="mini" value="-" id={id} handleClickId={decrement} />
 				</div>
 			</div>
@@ -122,6 +163,7 @@ CartItem.propTypes = {
 	decrement: PropTypes.func,
 	id: PropTypes.number,
 	increment: PropTypes.func,
+	removeCartItem: PropTypes.func,
 	product: PropTypes.shape({
 		attributes: PropTypes.arrayOf(
 			PropTypes.shape({
@@ -132,7 +174,7 @@ CartItem.propTypes = {
 		name: PropTypes.string,
 		brand: PropTypes.string,
 		count: PropTypes.number,
-		image: PropTypes.string,
+		image: PropTypes.arrayOf(PropTypes.string),
 		prices: PropTypes.arrayOf(
 			PropTypes.shape({
 				amount: PropTypes.number,

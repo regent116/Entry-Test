@@ -43,6 +43,10 @@ export const CartSlice = createSlice({
 		resetCart: (state) => {
 			state.products = [];
 		},
+		removeCartItem: (state, action) => {
+			const id = action.payload;
+			state.products.splice(id, 1);
+		},
 		toggleCartOverlayVisibility: (state) => {
 			state.cartOverlayVisible = !state.cartOverlayVisible;
 			state.currencyOverlayVisible = false;
@@ -67,7 +71,8 @@ export const {
 	reset,
 	resetCart,
 	toggleCartOverlayVisibility,
-	hideOverlays
+	hideOverlays,
+	removeCartItem
 } = actions;
 
 export default CartSlice;

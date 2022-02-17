@@ -27,14 +27,25 @@ export class CarouselContainer extends PureComponent {
 	constructor(props) {
 		super(props);
 
-		const { reset } = this.props;
+		const { reset, slides } = this.props;
+
 		this.state = {
 			translate: 0,
 			showArrows: isTouchDevice,
 			dimensions: {}
 		};
 
+		this.slidesUrls = [...slides];
+
+		// Go to first slide
 		reset();
+
+		this.slidesUrls.forEach((url, i) => {
+			fetch(url).then((res) => {
+				if (res.status === 404) this.slidesUrls.splice(i, 1);
+			});
+		});
+
 		this.child = React.createRef();
 	}
 
@@ -46,8 +57,10 @@ export class CarouselContainer extends PureComponent {
 	};
 
 	containerProps() {
-		const { slides } = this.props;
+		const { type } = this.props;
 		const { translate, showArrows } = this.state;
+
+		const slides = this.slidesUrls;
 
 		const slidePos = {
 			transform: `translateX(-${translate}px)`,
@@ -55,7 +68,7 @@ export class CarouselContainer extends PureComponent {
 			transition: `transform ease-out 0.45s`
 		};
 
-		return { slides, slidePos, showArrows };
+		return { slides, slidePos, showArrows, type };
 	}
 
 	componentDidMount() {
@@ -79,6 +92,7 @@ export class CarouselContainer extends PureComponent {
 	prevSlide() {
 		const { currentImageIndex, decrement } = this.props;
 
+
 		if (currentImageIndex === 0) {
 			return;
 		}
@@ -86,19 +100,20 @@ export class CarouselContainer extends PureComponent {
 		decrement();
 
 		this.setState({
-			translate: (currentImageIndex - 1) * this.getWidth(),
+			translate: (currentImageIndex - 1) * this.getWidth()
 		});
 	}
 
 	nextSlide() {
-		const { slides, currentImageIndex, increment } = this.props;
+		const { currentImageIndex, increment } = this.props;
+		const slides = this.slidesUrls;
 
 		if (currentImageIndex === slides.length - 1) return;
 
 		increment();
 
 		this.setState({
-			translate: (currentImageIndex + 1) * this.getWidth(),
+			translate: (currentImageIndex + 1) * this.getWidth()
 		});
 	}
 
@@ -108,7 +123,7 @@ export class CarouselContainer extends PureComponent {
 		setCurrentImage(i);
 
 		this.setState({
-			translate: i * this.getWidth(),
+			translate: i * this.getWidth()
 		});
 	}
 
@@ -135,6 +150,7 @@ export class CarouselContainer extends PureComponent {
 
 CarouselContainer.propTypes = {
 	currentImageIndex: PropTypes.number,
+	type: PropTypes.string,
 	decrement: PropTypes.func,
 	increment: PropTypes.func,
 	reset: PropTypes.func,
@@ -144,6 +160,7 @@ CarouselContainer.propTypes = {
 
 CarouselContainer.defaultProps = {
 	currentImageIndex: 0,
+	type: 'default',
 	slides: []
 };
 

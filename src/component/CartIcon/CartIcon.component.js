@@ -4,15 +4,16 @@ import Cart from '../../images/cart.svg';
 import './CartIcon.style.css';
 
 export class CartIcon extends PureComponent {
+	
 	renderItemCount = () => {
-		const { productsLength } = this.props;
+		const { productsQuantity } = this.props;
 		let visible = false;
 
-		if (productsLength > 0) visible = true;
+		if (productsQuantity > 0) visible = true;
 
 		return (
 			<div className={`cart-icon__item-count ${visible ? 'visible' : ''}`}>
-				{productsLength}
+				{productsQuantity}
 			</div>
 		);
 	};
@@ -31,11 +32,11 @@ export class CartIcon extends PureComponent {
 
 CartIcon.propTypes = {
 	handleClick: PropTypes.func,
-	productsLength: PropTypes.number
+	productsQuantity: PropTypes.number
 };
 
 CartIcon.defaultProps = {
-	productsLength: 0
+	productsQuantity: 0
 };
 
 export default CartIcon;

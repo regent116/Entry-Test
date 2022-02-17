@@ -15,6 +15,11 @@
   overflow: hidden;
 }
 
+.gallery-image-wrapper.alt {
+  width: 141px;
+  height: 185px;
+}
+
 .slider {
   height: 100%;
   display: -webkit-box;

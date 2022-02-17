@@ -16,7 +16,8 @@ export const mapDispatchToProps = (dispatch) => {
 		resetCart: bindActionCreators(() => CartSlice.actions.resetCart(), dispatch),
 		hideOverlays: bindActionCreators(() => CartSlice.actions.hideOverlays(), dispatch),
 		increment: bindActionCreators((id) => CartSlice.actions.increment(id), dispatch),
-		decrement: bindActionCreators((id) => CartSlice.actions.decrement(id), dispatch)
+		decrement: bindActionCreators((id) => CartSlice.actions.decrement(id), dispatch),
+		removeCartItem: bindActionCreators((id) => CartSlice.actions.removeCartItem(id), dispatch),
 	};
 };
 
@@ -29,7 +30,8 @@ export class CartContainer extends PureComponent {
 			hideOverlays,
 			products,
 			increment,
-			decrement
+			decrement,
+			removeCartItem
 		} = this.props;
 
 		return {
@@ -39,7 +41,8 @@ export class CartContainer extends PureComponent {
 			hideOverlays,
 			products,
 			increment,
-			decrement
+			decrement,
+			removeCartItem
 		};
 	}
 
@@ -52,6 +55,7 @@ CartContainer.propTypes = {
 	cartOverlayVisible: PropTypes.bool,
 	currencyOverlayVisible: PropTypes.bool,
 	decrement: PropTypes.func,
+	removeCartItem: PropTypes.func,
 	hideOverlays: PropTypes.func,
 	increment: PropTypes.func,
 	resetCart: PropTypes.func,
@@ -65,7 +69,7 @@ CartContainer.propTypes = {
 			),
 			brand: PropTypes.string,
 			count: PropTypes.number,
-			image: PropTypes.string,
+			image: PropTypes.arrayOf(PropTypes.string),
 			prices: PropTypes.arrayOf(
 				PropTypes.shape({
 					amount: PropTypes.number,
